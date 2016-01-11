@@ -17,21 +17,23 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 
-</head>
+	</head>
 
-<body>
-	<form method="post">
-		Database name:<br>	
-		<input type="text" name="server"><br>
-		Server:<br>	
-		<input type="text" name="server"><br>
-		User:<br>	
-		<input type="text" name="user"><br>
-		Password:<br>	
-		<input type="password" name="password"><br>
-		<button type="submit">Go</button>
-	</form>
-</body>
+	<body>
+		<form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+			Database name:<br>	
+			<input type="text" name="server"><br>
+			Server:<br>	
+			<input type="text" name="server"><br>
+			User:<br>	
+			<input type="text" name="user"><br>
+			Password:<br>	
+			<input type="password" name="password"><br>
+			<button type="submit">Go</button>
+		</form>
+
+
+	</body>
 </html>

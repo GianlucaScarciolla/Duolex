@@ -18,24 +18,25 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 <?php
 
 class Connector {
-	private $server;	
-	private $user;	
-	private $password;	
-	private $desired_db;	
-	private $mysqliConnection;	
+
+	private $server;
+	private $user;
+	private $password;
+	private $desired_db;
+	private $mysqliConnection;
 	private $status;
 
 	function __constructor($server, $user, $password, $desired_db) {
-		$this->server = $server;	
-		$this->user = $user;	
-		$this->password = $password;	
-		$this->desired_db = $desired_db;	
+		$this->server = $server;
+		$this->user = $user;
+		$this->password = $password;
+		$this->desired_db = $desired_db;
 	}
 
 	function connectDatabase() {
 		$mysqlConn = new mysqli($this->server, $this->user, $this->password);
 
-		if($mysqlConn->connect_error) {
+		if ($mysqlConn->connect_error) {
 			// Failure
 			$this->status = 0;
 		} else {
@@ -52,6 +53,6 @@ class Connector {
 	function getConnection() {
 		return $this->mysqliConnection;
 	}
-}
 
+}
 ?>
