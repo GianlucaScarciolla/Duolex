@@ -15,22 +15,5 @@ You should have received a copy of the GNU General Public License
 along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<!DOCTYPE html>
-<html>
-<head>
-
-</head>
-
-<body>
-	<form method="post">
-		Database name:<br>	
-		<input type="text" name="server"><br>
-		Server:<br>	
-		<input type="text" name="server"><br>
-		User:<br>	
-		<input type="text" name="user"><br>
-		Password:<br>	
-		<input type="password" name="password"><br>
-	</form>
-</body>
-</html>
+<?php
+?>
