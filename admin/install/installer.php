@@ -16,4 +16,38 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <?php
+require './connector.php';
+
+class Installer {
+
+	private $connector;
+
+	function installFromVarsSet() {
+		return (isset($_POST["database"]) &&
+			isset($_POST["server"]) &&
+			isset($_POST["user"]) &&
+			isset($_POST["password"]));
+	}
+
+	function install() {
+		// $_POST array entries set
+		if ($this->installFromVarsSet()) {
+			$this->connect();
+		} else {
+			echo "vars not set";
+		}
+	}
+
+	function connect() {
+		$this->connector = new Connector($_POST["database"], $_POST["server"], $_POST["user"], $_POST["password"]);
+		$this->connector->connectDatabase();
+
+		if ($this->connector->success()) {
+			echo "success";
+		} else {
+			echo "failure";
+		}
+	}
+
+}
 ?>

@@ -24,7 +24,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 	<body>
 		<form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 			Database name:<br>	
-			<input type="text" name="server"><br>
+			<input type="text" name="database"><br>
 			Server:<br>	
 			<input type="text" name="server"><br>
 			User:<br>	
@@ -34,6 +34,11 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 			<button type="submit">Go</button>
 		</form>
 
+		<?php
+			require './installer.php';
 
+			$installer = new Installer();
+			$installer->install();
+		?>
 	</body>
 </html>
