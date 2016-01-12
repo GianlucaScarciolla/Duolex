@@ -36,6 +36,10 @@ class Connector {
 		$this->desired_db = $desired_db;
 	}
 
+	function __destruct() {
+		$this->mysqliConnection->close();
+	}
+
 	function connectDatabase() {
 		$mysqlConn = new mysqli($this->server, $this->user, $this->password);
 
