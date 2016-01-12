@@ -19,10 +19,18 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 require './connector.php';
 require '../../includes/constants.php';
 
+/**
+ * Tries to connect to the DB.
+ * Also creates important tables (user, admin, etc)
+ */
 class Installer {
 
 	private $connector;
 
+	/**
+	 * Makes sure the form from install.php is filled out properly
+	 * @return Boolean
+	 */
 	function installFromVarsSet() {
 		return (isset($_POST[FORM_DATABASE]) &&
 			isset($_POST[FORM_SERVER]) &&

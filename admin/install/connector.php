@@ -17,6 +17,9 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 <?php
 
+/**
+ * Establishes a connection with a MySQL database.
+ */
 class Connector {
 
 	private $server;

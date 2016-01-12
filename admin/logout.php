@@ -17,8 +17,17 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 <?php
 
-session_start();
-if (session_destroy()) { // Destroying All Sessions
-	header("Location: index.php"); // Redirecting To Home Page
+/**
+ * Destroys ALL existing sessions.
+ * @param String $name page to redirect to
+ */
+function destroySession($redirect) {
+	session_start();
+	if (session_destroy()) {
+		unset($_SESSION);
+		if(isset($redirect)) {
+			header("Location: ".$redirect);
+		}
+	}
 }
 ?>
