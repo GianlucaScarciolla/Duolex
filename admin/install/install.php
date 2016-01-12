@@ -15,6 +15,10 @@ You should have received a copy of the GNU General Public License
 along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
+<?php
+require_once './installer.php';
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,21 +28,20 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 	<body>
 		<form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 			Database name:<br>	
-			<input type="text" name="database"><br>
+			<input type="text" name="<?php echo FORM_DATABASE; ?>"><br>
 			Server:<br>	
-			<input type="text" name="server"><br>
+			<input type="text" name="<?php echo FORM_SERVER; ?>"><br>
 			User:<br>	
-			<input type="text" name="user"><br>
+			<input type="text" name="<?php echo FORM_USER; ?>"><br>
 			Password:<br>	
-			<input type="password" name="password"><br>
+			<input type="password" name="<?php echo FORM_PASSWORD; ?>"><br>
 			<button type="submit">Go</button>
 		</form>
 
 		<?php
-			require './installer.php';
 
-			$installer = new Installer();
-			$installer->install();
+		$installer = new Installer();
+		$installer->install();
 		?>
 	</body>
 </html>

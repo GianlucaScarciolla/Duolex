@@ -17,16 +17,17 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 <?php
 require './connector.php';
+require '../../includes/constants.php';
 
 class Installer {
 
 	private $connector;
 
 	function installFromVarsSet() {
-		return (isset($_POST["database"]) &&
-			isset($_POST["server"]) &&
-			isset($_POST["user"]) &&
-			isset($_POST["password"]));
+		return (isset($_POST[FORM_DATABASE]) &&
+			isset($_POST[FORM_SERVER]) &&
+			isset($_POST[FORM_USER]) &&
+			isset($_POST[FORM_PASSWORD]));
 	}
 
 	function install() {
@@ -39,7 +40,9 @@ class Installer {
 	}
 
 	function connect() {
-		$this->connector = new Connector($_POST["database"], $_POST["server"], $_POST["user"], $_POST["password"]);
+		$this->connector = new Connector(
+			$_POST[FORM_DATABASE], $_POST[FORM_SERVER],
+			$_POST[FORM_USER], $_POST[FORM_PASSWORD]);
 		$this->connector->connectDatabase();
 
 		if ($this->connector->success()) {
