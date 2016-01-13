@@ -58,6 +58,8 @@ class Installer {
 			// STEP 1:	generate config file for future connections.
 			$cfg = new ConfigFile(CONFIG_FILE_NAME);
 			$cfg->generate();
+
+			// STEP 2:	
 		} else {
 			echo "failure";
 		}
