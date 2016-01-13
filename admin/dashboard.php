@@ -23,7 +23,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 <html>
 	<head>
 		<title>Dashboard</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="css/dashboard.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<div id="profile">
