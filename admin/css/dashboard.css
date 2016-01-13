@@ -18,3 +18,36 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 /*----------------------------------------------
 CSS Settings For Dashboard Page
 ------------------------------------------------*/
+
+body {
+	font-family:"Calibri Light";	
+	background-color:#151515;
+}
+
+
+#header-dashboard {
+    background: #151515;
+    color: #fefefe;
+    padding: .5rem;
+}
+
+#sidemenu-tools {
+	background-color:#212121;	
+	height:100%;
+}
+
+.menuaccordionside {
+	background-color:#141414;
+
+}
+
+.menuside {
+
+}
+
+menuaccordionside.selected, menuaccordionside a:hover
+{
+  background:#141414;
+  text-decoration:none; 
+}
+
