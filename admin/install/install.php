@@ -39,7 +39,6 @@ require_once './installer.php';
 		</form>
 
 		<?php
-
 		$installer = new Installer();
 		$installer->install();
 		?>

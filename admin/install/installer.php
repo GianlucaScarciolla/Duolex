@@ -17,6 +17,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 <?php
 require './connector.php';
+require './config_file.php';
 require '../../includes/constants.php';
 
 /**
@@ -31,7 +32,7 @@ class Installer {
 	 * Makes sure the form from install.php is filled out properly
 	 * @return Boolean
 	 */
-	function installFromVarsSet() {
+	function installFormVarsSet() {
 		return (isset($_POST[FORM_DATABASE]) &&
 			isset($_POST[FORM_SERVER]) &&
 			isset($_POST[FORM_USER]) &&
@@ -40,10 +41,10 @@ class Installer {
 
 	function install() {
 		// $_POST array entries set
-		if ($this->installFromVarsSet()) {
+		if ($this->installFormVarsSet()) {
 			$this->connect();
 		} else {
-			echo "vars not set";
+			echo "vars not yet set";
 		}
 	}
 
@@ -54,7 +55,9 @@ class Installer {
 		$this->connector->connectDatabase();
 
 		if ($this->connector->success()) {
-			echo "success";
+			// STEP 1:	generate config file for future connections.
+			$cfg = new ConfigFile(CONFIG_FILE_NAME);
+			$cfg->generate();
 		} else {
 			echo "failure";
 		}
