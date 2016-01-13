@@ -25,7 +25,7 @@ if (isset($_SESSION['login_user'])) {
 
 
 <!DOCTYPE html>
-<html>
+<html style="background-color:#151515">
 	<head>
 		<title>Login</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
@@ -33,7 +33,7 @@ if (isset($_SESSION['login_user'])) {
 	<body>
 		<div id="main">
 			<div id="login">
-				<h2>Login Form</h2>
+				<h2>Login</h2>
 				<form action="" method="post">
 					<label>UserName :</label>
 					<input id="name" name="username" placeholder="username" type="text">
