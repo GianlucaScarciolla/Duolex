@@ -21,19 +21,32 @@ CSS Settings For Dashboard Page
 
 body {
 	font-family:"Calibri Light";	
-	background-color:#151515;
+	background-color:#212121;
 }
 
+#header-dashboard {
+	width:100%;
+	z-index:999;
+	top:0;
+}
 
 #header-dashboard {
-    background: #151515;
-    color: #fefefe;
-    padding: .5rem;
+	background: #151515;
+	color: #fefefe;
+	padding: .5rem;
+}
+
+#dashboard {
+	position:absolute;
 }
 
 #sidemenu-tools {
 	background-color:#212121;	
 	height:100%;
+}
+
+.main-wrapper {
+	height: 100vh;
 }
 
 .menuaccordionside {
@@ -47,13 +60,13 @@ body {
 
 menuaccordionside.selected, menuaccordionside a:hover
 {
-  background:#141414;
-  text-decoration:none; 
+	background:#141414;
+	text-decoration:none; 
 }
 
 
 #DuolexLogo {
 	display: block;
-    margin-left: auto;
-    margin-right: auto 
-	}
+	margin-left: auto;
+	margin-right: auto 
+}
