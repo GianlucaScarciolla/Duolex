@@ -1,7 +1,7 @@
 <?php
-/**
+
   include('session.php');
- */
+
 ?>
 
 
@@ -34,6 +34,8 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 	<link href="css/dashboard.css" rel="stylesheet" type="text/css">
 	<link href="css/foundation-icons/foundation-icons.css" rel="stylesheet" type="text/css">
 	<!-- Compressed JavaScript -->
+    <script src="ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"; type="text/javascript"> </script>
+    <script src="js/content-loader.js"; type="text/javascript"> </script>
 	<script src="https://cdn.jsdelivr.net/foundation/6.1.1/foundation.min.js"></script>
 
     </head>
@@ -60,7 +62,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 			<ul class="menu vertical" data-accordion-menu style="max-width: 250px;">
 			    <li class="menuside"><a href="#"><i class="fi-home"></i> Home</a>
 				<ul class="menu menuaccordionside vertical">
-				    <li class="menuside"><a href="#">Workboard</a></li>
+				    <li class="menuside"><a onclick="contentload('index.php')">Workboard</a></li>
 				</ul>
 			    </li>
 
@@ -144,6 +146,10 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 			    <span class="title-bar-title">Menu</span>
 			</div>
 		    </div>
+            
+         			  <div id=content>
+          			  </div>
+            
 		</div>
 	    </div>
 	    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
