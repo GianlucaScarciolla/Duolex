@@ -40,7 +40,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 	<body>
      
     
-<div style="width:100%;z-index:999;top:0;">
+<div>
 	<div id="header-dashboard">
 
     <span class="title-bar-title">Duolex Dashboard</span>
@@ -51,7 +51,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
         
         
         <div class="off-canvas-wrapper">
-<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+<div class="off-canvas-wrapper-inner" id="content-body" data-off-canvas-wrapper>
 <div class="off-canvas position-left reveal-for-large" style="position:absolute" id="my-info" data-off-canvas data-position="left">
 <div id="sidemenu-tools" class="row column">
 <br>

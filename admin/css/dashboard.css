@@ -24,11 +24,18 @@ body {
 	background-color:#151515;
 }
 
+#content-body {
+    height: 100vh;
+}
 
 #header-dashboard {
     background: #151515;
     color: #fefefe;
     padding: .5rem;
+}
+
+.dashboard-left {
+	position: absolute;
 }
 
 #sidemenu-tools {
