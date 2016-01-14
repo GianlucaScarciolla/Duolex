@@ -120,9 +120,12 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
          <li class="menuside"><a href="#">???</a></li>
    		</ul>
   </li>
-
-
-
+  <hr>
+  <br>
+<div >
+<a href="#"><img id="DuolexLogo" src="img/Duolex_Logo.png" alt="Duolex_Logo" height="auto" width="85"> </a>
+</div>
+<br>
 </ul>
 <br>
 
