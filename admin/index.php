@@ -25,7 +25,7 @@ if (isset($_SESSION['login_user'])) {
 
 
 <!DOCTYPE html>
-<html>
+<html style="background-color:#151515">
 	<head>
 		<title>Login</title>
 		<link href="css/login.css" rel="stylesheet" type="text/css">
