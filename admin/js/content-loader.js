@@ -16,8 +16,8 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 -->
 */
 
-function contentload() {
-    javascript:$('#content').load();
+function contentload(str) {
+    $('#content').load(str);
 }
 
 
