@@ -34,9 +34,9 @@ class Installer {
 	 */
 	function installFormVarsSet() {
 		return (isset($_POST[FORM_DATABASE]) &&
-			isset($_POST[FORM_SERVER]) &&
-			isset($_POST[FORM_USER]) &&
-			isset($_POST[FORM_PASSWORD]));
+				isset($_POST[FORM_SERVER]) &&
+				isset($_POST[FORM_USER]) &&
+				isset($_POST[FORM_PASSWORD]));
 	}
 
 	function install() {
@@ -50,8 +50,7 @@ class Installer {
 
 	function connect() {
 		$this->connector = new Connector(
-			$_POST[FORM_DATABASE], $_POST[FORM_SERVER],
-			$_POST[FORM_USER], $_POST[FORM_PASSWORD]);
+				$_POST[FORM_DATABASE], $_POST[FORM_SERVER], $_POST[FORM_USER], $_POST[FORM_PASSWORD]);
 		$this->connector->connectDatabase();
 
 		if ($this->connector->success()) {

@@ -31,11 +31,10 @@ define("ACCOUNT_TYPE_REGULAR", "ua_regular");
 /**
  * Querys
  */
-define("INSTALLQUERY_TABLE_USERS",
-		"CREATE TABLE duolex_users ("
+define("INSTALLQUERY_TABLE_USERS", "CREATE TABLE duolex_users ("
 		. "ID INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
-		. "loginname VARCHAR(50) NOT NULL,"					// Will be used to log in along with the password
-		. "password VARCHAR(40) NOT NULL,"					// Hashed password
+		. "loginname VARCHAR(50) NOT NULL,"	 // Will be used to log in along with the password
+		. "password VARCHAR(40) NOT NULL,"	 // Hashed password
 		. "firstname VARCHAR(50),"
 		. "lastname VARCHAR(50),"
 		. "email VARCHAR(50) NOT NULL,"
@@ -44,5 +43,4 @@ define("INSTALLQUERY_TABLE_USERS",
 		. "age TINYINT"
 		. "usertype VARCHAR(15) NOT NULL"
 		. ")");
-
 ?>
