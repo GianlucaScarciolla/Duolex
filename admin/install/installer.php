@@ -44,10 +44,14 @@ class Installer {
 		if ($this->installFormVarsSet()) {
 			$this->connect();
 		} else {
-			echo "vars not yet set";
+			// vars not yet set
 		}
 	}
 
+	/**
+	 * Connects to the DB using the _POST array
+	 * Also writes a config file upon a successful connect
+	 */
 	function connect() {
 		$this->connector = new Connector(
 				$_POST[FORM_DATABASE], $_POST[FORM_SERVER], $_POST[FORM_USER], $_POST[FORM_PASSWORD]);
@@ -58,7 +62,6 @@ class Installer {
 			$cfg = new ConfigFile(CONFIG_FILE_NAME);
 			$cfg->generate();
 
-			// STEP 2:	
 		} else {
 			echo "failure";
 		}
