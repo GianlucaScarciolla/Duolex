@@ -17,6 +17,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 <?php
 require_once './installer.php';
+error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>

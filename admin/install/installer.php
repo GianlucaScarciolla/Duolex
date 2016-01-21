@@ -19,6 +19,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 require './connector.php';
 require './config_file.php';
 require '../../includes/constants.php';
+require './table_creator.php';
 
 /**
  * Tries to connect to the DB.
@@ -27,6 +28,21 @@ require '../../includes/constants.php';
 class Installer {
 
 	private $connector;
+
+	/**
+	 * Step 1:	DB,Server,User,Pw Credidentials and connect
+	 * Step 2:	Set up admin account
+	 * @var Integer 
+	 */
+	private $step;
+
+	function __construct() {
+		$this->step = 1;
+	}
+
+	function getStep() {
+		return $this->step;
+	}
 
 	/**
 	 * Makes sure the form from install.php is filled out properly
@@ -40,11 +56,17 @@ class Installer {
 	}
 
 	function install() {
-		// $_POST array entries set
-		if ($this->installFormVarsSet()) {
-			$this->connect();
-		} else {
-			// vars not yet set
+		switch ($this->step) {
+			case 1:
+				if ($this->installFormVarsSet() && $this->connect()) {
+					// Ready to create tables
+					$tc = new TableCreator($this->connector->getConnection());
+					$this->step = $tc->createAll() === TRUE ? 2 : 1;
+				} else {
+					// vars not yet set
+					// Don't go to step 2 yet.
+				}
+				break;
 		}
 	}
 
@@ -54,17 +76,16 @@ class Installer {
 	 */
 	function connect() {
 		$this->connector = new Connector(
-				$_POST[FORM_DATABASE], $_POST[FORM_SERVER], $_POST[FORM_USER], $_POST[FORM_PASSWORD]);
+				$_POST[FORM_SERVER], $_POST[FORM_USER], $_POST[FORM_PASSWORD], $_POST[FORM_DATABASE]);
 		$this->connector->connectDatabase();
 
 		if ($this->connector->success()) {
-			// STEP 1:	generate config file for future connections.
 			$cfg = new ConfigFile(CONFIG_FILE_NAME);
 			$cfg->generate();
-
-		} else {
-			echo "failure";
+			return true;
 		}
+		echo "Couldn't connect to DB";
+		return false;
 	}
 
 }

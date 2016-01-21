@@ -29,7 +29,7 @@ class Connector {
 	private $mysqliConnection;
 	private $status;
 
-	function __constructor($server, $user, $password, $desired_db) {
+	function __construct($server, $user, $password, $desired_db) {
 		$this->server = $server;
 		$this->user = $user;
 		$this->password = $password;
@@ -41,15 +41,15 @@ class Connector {
 	}
 
 	function connectDatabase() {
-		$mysqlConn = new mysqli($this->server, $this->user, $this->password);
+		$this->mysqliConnection = new mysqli($this->server, $this->user, $this->password, $this->desired_db);
 
-		if ($mysqlConn->connect_error) {
+		if ($this->mysqliConnection->connect_error) {
 			// Failure
 			$this->status = 0;
 		} else {
 			// Success
 			$this->status = 1;
-			$this->mysqliConnection = $mysqlConn;
+			echo $this->mysqliConnection->error;
 		}
 	}
 

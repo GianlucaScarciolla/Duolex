@@ -38,9 +38,9 @@ define("INSTALLQUERY_TABLE_USERS", "CREATE TABLE duolex_users ("
 		. "firstname VARCHAR(50),"
 		. "lastname VARCHAR(50),"
 		. "email VARCHAR(50) NOT NULL,"
-		. "website VARCHAR(20)"
-		. "gender VARCHAR(15)"
-		. "age TINYINT"
+		. "website VARCHAR(20),"
+		. "gender VARCHAR(15),"
+		. "age TINYINT,"
 		. "usertype VARCHAR(15) NOT NULL"
 		. ")");
 ?>
