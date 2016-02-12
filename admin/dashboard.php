@@ -67,11 +67,19 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
         <?php
 
-        // Section 1
+        // Section
+        $sectionnb = 1;
+        for ($i=0; $i < 4; $i++) {
 
-        $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section = 1");
+
+
+        $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section =" .$sectionnb);
         while($row=$res->fetch_array())
         {
+
+
+
+
          ?>
          <li class="menuside"><a href="<?php echo $row['m_menu_link']; ?>"><i class="<?php echo $row['m_menu_icon']; ?>"></i> <?php echo $row['m_menu_name']; ?></a>
 
@@ -87,85 +95,20 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
           ?>
          </ul>
          </li>
+
             <?php
         }
+
+                  $sectionnb++;
         ?>
-        			    <span><hr></span>
-        <?php
-        // Section 2
 
-        $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section = 2");
-        while($row=$res->fetch_array())
-        {
-         ?>
-         <li class="menuside"><a href="<?php echo $row['m_menu_link']; ?>"><i class="<?php echo $row['m_menu_icon']; ?>"></i> <?php echo $row['m_menu_name']; ?></a>
-
-         <?php
-         $res_pro=$dbcon->query("SELECT * FROM subadmin_menu WHERE m_menu_id=".$row['m_menu_id']);
-         ?>
-                <ul class="menu menuaccordionside vertical">
+          <span><hr></span>
           <?php
-          while($pro_row=$res_pro->fetch_array())
-          {
-           ?><li class="menuside"><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
           }
-          ?>
-         </ul>
-         </li>
-            <?php
-        }
         ?>
-        	<span><hr></span>
-          <?php
-          // Section 3
 
-          $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section = 3");
-          while($row=$res->fetch_array())
-          {
-           ?>
-           <li class="menuside"><a href="<?php echo $row['m_menu_link']; ?>"><i class="<?php echo $row['m_menu_icon']; ?>"></i> <?php echo $row['m_menu_name']; ?></a>
 
-           <?php
-           $res_pro=$dbcon->query("SELECT * FROM subadmin_menu WHERE m_menu_id=".$row['m_menu_id']);
-           ?>
-                  <ul class="menu menuaccordionside vertical">
-            <?php
-            while($pro_row=$res_pro->fetch_array())
-            {
-             ?><li class="menuside"><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
-            }
-            ?>
-           </ul>
-           </li>
-              <?php
-          }
-          ?>
-          <span><hr></span>
-<?php
-// Section 4
 
-$res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section = 4");
-while($row=$res->fetch_array())
-{
- ?>
- <li class="menuside"><a href="<?php echo $row['m_menu_link']; ?>"><i class="<?php echo $row['m_menu_icon']; ?>"></i> <?php echo $row['m_menu_name']; ?></a>
-
- <?php
- $res_pro=$dbcon->query("SELECT * FROM subadmin_menu WHERE m_menu_id=".$row['m_menu_id']);
- ?>
-        <ul class="menu menuaccordionside vertical">
-  <?php
-  while($pro_row=$res_pro->fetch_array())
-  {
-      ?><li class="menuside"><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
-              }
-              ?>
-          </ul>
-          </li>
-          <?php
-              }
-              ?>
-          <span><hr></span>
 
 			    <br>
 			    <div >
