@@ -20,7 +20,7 @@ CSS Settings For Dashboard Page
 ------------------------------------------------*/
 
 body {
-    font-family:"Calibri Light";	
+    font-family:"Calibri Light";
     background-color:#151515;
 }
 
@@ -39,7 +39,7 @@ body {
 }
 
 #sidemenu-tools {
-    background-color:#212121;	
+    background-color:#212121;
     height:100%;
 }
 
@@ -55,12 +55,17 @@ body {
 menuaccordionside.selected, menuaccordionside a:hover
 {
     background:#141414;
-    text-decoration:none; 
+    text-decoration:none;
 }
 
 
 #DuolexLogo {
     display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto
+}
+
+.account_dropdown {
+float: right;
+
 }

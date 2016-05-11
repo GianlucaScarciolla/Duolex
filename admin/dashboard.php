@@ -1,26 +1,19 @@
 <?php
-
   /* include('session.php'); */
-
 $dbcon = new MySQLi("localhost","root","","duolextest");
-
-
 ?>
 
 
 <!--
 This file is part of Duolex.
-
 Duolex is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-
 Duolex is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License
 along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 -->
@@ -66,28 +59,11 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 
         <?php
-
         // Section
-<<<<<<< HEAD
-        $sectionnb = 1;
-        for ($i=0; $i < 4; $i++) {
-
-
-
-        $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section =" .$sectionnb);
-=======
         for ($i=1; $i <= 4; $i++) {
-
-
-
         $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section =" .$i);
->>>>>>> master
         while($row=$res->fetch_array())
         {
-
-
-
-
          ?>
          <li class="menuside"><a href="<?php echo $row['m_menu_link']; ?>"><i class="<?php echo $row['m_menu_icon']; ?>"></i> <?php echo $row['m_menu_name']; ?></a>
 
@@ -101,20 +77,11 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
            ?><li class="menuside"><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
           }
           ?>
-<<<<<<< HEAD
-        </ul>
-=======
          </ul>
->>>>>>> master
          </li>
 
             <?php
         }
-
-<<<<<<< HEAD
-                  $sectionnb++;
-=======
->>>>>>> master
         ?>
 
           <span><hr></span>
