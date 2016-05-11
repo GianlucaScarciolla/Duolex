@@ -90,7 +90,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
           <?php
           while($pro_row=$res_pro->fetch_array())
           {
-           ?><li class="menuside"><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
+           ?><li class="menuside"><a href="<?php echo "javascript:$('#content').load('" . $pro_row['s_menu_link'] . "')" ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
           }
           ?>
          </ul>
