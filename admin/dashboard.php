@@ -43,6 +43,18 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 		<span class="title-bar-title">Duolex Dashboard</span>
 
+        <div class="account_dropdown">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li>
+              <a href="#"></a>
+              <ul class="menu">
+                <li><a href="#">Item 1A</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+
 	    </div>
 	</div>
 
