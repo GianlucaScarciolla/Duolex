@@ -1,6 +1,9 @@
 <?php
 
-  include('session.php');
+  /* include('session.php'); */
+
+$dbcon = new MySQLi("localhost","root","","duolextest");
+
 
 ?>
 
@@ -60,69 +63,53 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 			<!-- MENU START -->
 			<ul class="menu vertical" data-accordion-menu style="max-width: 250px;">
-			    <li class="menuside"><a href="#"><i class="fi-home"></i> Home</a>
-				<ul class="menu menuaccordionside vertical">
-				    <li class="menuside"><a onclick="contentload('index.php')">Workboard</a></li>
-				</ul>
-			    </li>
 
-			    <li class="menuside"><a href="#"><i class="fi-graph-trend"></i> Statistics</a></li>
 
-			    <span><hr></span>
+        <?php
 
-			    <li class="menuside"><a href="#"><i class="fi-page-multiple"></i> Pages</a>
-				<ul class="menu menuaccordionside vertical">
-				    <li class="menuside"><a href="#">All Pages</a></li>
-				    <li class="menuside"><a href="#">Add New</a></li>
-				</ul>
-			    </li>
+        // Section
+        $sectionnb = 1;
+        for ($i=0; $i < 4; $i++) {
 
-			    </li>
-			    <li class="menuside"><a href="#"><i class="fi-thumbnails"></i> Media</a>
-			    </li>
 
-			    <span><hr></span>
 
-			    <li class="menuside"><a href="#"><i class="fi-pencil"></i> Blog</a></li>
+        $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section =" .$sectionnb);
+        while($row=$res->fetch_array())
+        {
 
-			    <li class="menuside"><a href="#"><i class="fi-paperclip"></i> Posts</a>
-				<ul class="menu menuaccordionside vertical">
-				    <li class="menuside"><a href="#">All Posts</a></li>
-				    <li class="menuside"><a href="#">Add New</a></li>
-				    <li class="menuside"><a href="#">Categories</a></li>
-				</ul>
-			    </li>
 
-			    <li class="menuside"><a href="#"><i class="fi-comment"></i> Comments</a>
-			    </li>
 
-			    <span><hr></span>
 
-			    <li class="menuside"><a href="#"><i class="fi-paint-bucket"></i> Design</a>
-				<ul class="menu menuaccordionside vertical">
-				    <li class="menuside"><a href="#">Themes</a></li>
-				    <li class="menuside"><a href="#">???</a></li>
-				</ul>
-			    </li>
+         ?>
+         <li class="menuside"><a href="<?php echo $row['m_menu_link']; ?>"><i class="<?php echo $row['m_menu_icon']; ?>"></i> <?php echo $row['m_menu_name']; ?></a>
 
-			    <li class="menuside"><a href="#"><i class="fi-widget"></i> Plugins</a></li>
-			    <li class="menuside"><a href="#"><i class="fi-wrench"></i> Tools</a></li>
-			    <li class="menuside"><a href="#"><i class="fi-torsos-female-male"></i> Users</a>
-				<ul class="menu menuaccordionside vertical">
-				    <li class="menuside"><a href="#">All Users</a></li>
-				    <li class="menuside"><a href="#">Add New</a></li>
-				    <li class="menuside"><a href="#">My Profil</a></li>
-				</ul>
-			    </li>
+         <?php
+         $res_pro=$dbcon->query("SELECT * FROM subadmin_menu WHERE m_menu_id=".$row['m_menu_id']);
+         ?>
+                <ul class="menu menuaccordionside vertical">
+          <?php
+          while($pro_row=$res_pro->fetch_array())
+          {
+           ?><li class="menuside"><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
+          }
+          ?>
+        </ul>
+         </li>
 
-			    <li class="menuside"><a href="#"><i class="fi-database"></i> Settings</a>
-				<ul class="menu menuaccordionside vertical">
-				    <li class="menuside"><a href="#">???</a></li>
-				    <li class="menuside"><a href="#">???</a></li>
-				    <li class="menuside"><a href="#">???</a></li>
-				</ul>
-			    </li>
-			    <hr>
+            <?php
+        }
+
+                  $sectionnb++;
+        ?>
+
+          <span><hr></span>
+          <?php
+          }
+        ?>
+
+
+
+
 			    <br>
 			    <div >
 				<a href="#"><img id="DuolexLogo" src="img/Duolex_Logo.png" alt="Duolex_Logo" height="auto" width="85"> </a>
@@ -146,10 +133,10 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 			    <span class="title-bar-title">Menu</span>
 			</div>
 		    </div>
-            
+
          			  <div id=content>
           			  </div>
-            
+
 		</div>
 	    </div>
 	    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

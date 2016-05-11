@@ -1,6 +1,6 @@
 <?php
 
-  include('../session.php');
+//  include('../session.php');
 
 ?>
 
@@ -21,3 +21,5 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 -->
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EHnqwlA6WKQ" frameborder="0" allowfullscreen></iframe>
