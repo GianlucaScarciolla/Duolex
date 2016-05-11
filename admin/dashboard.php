@@ -1,6 +1,10 @@
 <?php
   /* include('session.php'); */
 $dbcon = new MySQLi("localhost","root","","duolextest");
+
+
+  $acc=$dbcon->query("SELECT firstname FROM duolex_users);
+
 ?>
 
 
@@ -46,7 +50,7 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
         <div class="account_dropdown">
           <ul class="dropdown menu" data-dropdown-menu>
             <li>
-              <a href="#"></a>
+              <a href="#"> <?php echo "$acc" ?> </a>
               <ul class="menu">
                 <li><a href="#">Item 1A</a></li>
               </ul>
