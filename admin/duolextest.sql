@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Erstellungszeit: 11. Mai 2016 um 14:08
+=======
+-- Erstellungszeit: 11. Feb 2016 um 20:55
+>>>>>>> master
 -- Server-Version: 10.1.9-MariaDB
 -- PHP-Version: 5.5.30
 
@@ -29,7 +33,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `mainadmin_menu` (
   `m_menu_id` int(2) NOT NULL,
   `m_menu_name` varchar(20) NOT NULL,
+<<<<<<< HEAD
   `m_menu_link` varchar(200) NOT NULL,
+=======
+  `m_menu_link` varchar(50) NOT NULL,
+>>>>>>> master
   `m_menu_icon` varchar(50) NOT NULL,
   `m_menu_section` int(2) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -50,7 +58,12 @@ INSERT INTO `mainadmin_menu` (`m_menu_id`, `m_menu_name`, `m_menu_link`, `m_menu
 (61, 'Plugins', '#', 'fi-widget', 4),
 (62, 'Tools', '#', 'fi-wrench', 4),
 (63, 'Users', '#', 'fi-torsos-female-male', 4),
+<<<<<<< HEAD
 (64, 'Settings', '#', 'fi-database', 4);
+=======
+(64, 'Settings', '#', 'fi-database', 4),
+(65, 'Settings', '#', '', 0);
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -62,7 +75,11 @@ CREATE TABLE `subadmin_menu` (
   `s_menu_id` int(2) NOT NULL,
   `m_menu_id` int(2) NOT NULL,
   `s_menu_name` varchar(20) NOT NULL,
+<<<<<<< HEAD
   `s_menu_link` varchar(200) NOT NULL
+=======
+  `s_menu_link` varchar(50) NOT NULL
+>>>>>>> master
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -70,7 +87,11 @@ CREATE TABLE `subadmin_menu` (
 --
 
 INSERT INTO `subadmin_menu` (`s_menu_id`, `m_menu_id`, `s_menu_name`, `s_menu_link`) VALUES
+<<<<<<< HEAD
 (6, 0, 'Workboard', 'javascript:$(''#content'').load(''includes/workboard.php'')'),
+=======
+(6, 0, 'Workboard', '#'),
+>>>>>>> master
 (7, 20, 'All Pages', '#'),
 (8, 20, 'Add New', '#'),
 (9, 41, 'All Posts', '#'),

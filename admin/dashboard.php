@@ -37,8 +37,8 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 	<link href="css/dashboard.css" rel="stylesheet" type="text/css">
 	<link href="css/foundation-icons/foundation-icons.css" rel="stylesheet" type="text/css">
 	<!-- Compressed JavaScript -->
-    <script src="ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"; type="text/javascript"> </script>
-    <script src="js/content-loader.js"; type="text/javascript"> </script>
+    <script src="ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"> </script>
+    <script src="js/content-loader.js" type="text/javascript"> </script>
 	<script src="https://cdn.jsdelivr.net/foundation/6.1.1/foundation.min.js"></script>
 
     </head>
@@ -68,12 +68,20 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
         <?php
 
         // Section
+<<<<<<< HEAD
         $sectionnb = 1;
         for ($i=0; $i < 4; $i++) {
 
 
 
         $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section =" .$sectionnb);
+=======
+        for ($i=1; $i <= 4; $i++) {
+
+
+
+        $res=$dbcon->query("SELECT * FROM mainadmin_menu WHERE m_menu_section =" .$i);
+>>>>>>> master
         while($row=$res->fetch_array())
         {
 
@@ -93,13 +101,20 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
            ?><li class="menuside"><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
           }
           ?>
+<<<<<<< HEAD
         </ul>
+=======
+         </ul>
+>>>>>>> master
          </li>
 
             <?php
         }
 
+<<<<<<< HEAD
                   $sectionnb++;
+=======
+>>>>>>> master
         ?>
 
           <span><hr></span>
