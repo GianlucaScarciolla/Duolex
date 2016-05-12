@@ -1,9 +1,10 @@
 <?php
-  /* include('session.php'); */
-$dbcon = new MySQLi("localhost","root","","duolextest");
+/* include('session.php'); */
+// TODO: move away from hardcoded DB
+$dbcon = new MySQLi("localhost","root","","duolex");
 
 
-  $acc=$dbcon->query("SELECT firstname FROM duolex_users);
+$acc=$dbcon->query("SELECT firstname FROM duolex_users");
 
 ?>
 
