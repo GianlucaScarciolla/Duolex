@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2016 at 09:25 AM
+-- Generation Time: May 12, 2016 at 09:47 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -82,6 +82,44 @@ INSERT INTO `subadmin_menu` (`s_menu_id`, `m_menu_id`, `s_menu_name`, `s_menu_li
 (15, 63, 'My Profil', '#'),
 (16, 64, 'Admin Menus', '#');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL,
+  `loginname` varchar(50) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `website` varchar(50) NOT NULL,
+  `gender` varchar(25) NOT NULL,
+  `age` tinyint(4) NOT NULL,
+  `type` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usertype`
+--
+
+CREATE TABLE IF NOT EXISTS `usertype` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usertype`
+--
+
+INSERT INTO `usertype` (`id`, `name`) VALUES
+(1, 'admin'),
+(2, 'regular');
+
 --
 -- Indexes for dumped tables
 --
@@ -99,6 +137,18 @@ ALTER TABLE `subadmin_menu`
   ADD PRIMARY KEY (`s_menu_id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `usertype`
+--
+ALTER TABLE `usertype`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -112,6 +162,16 @@ ALTER TABLE `mainadmin_menu`
 --
 ALTER TABLE `subadmin_menu`
   MODIFY `s_menu_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `usertype`
+--
+ALTER TABLE `usertype`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
