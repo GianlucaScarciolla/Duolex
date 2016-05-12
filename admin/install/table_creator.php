@@ -12,7 +12,6 @@ class TableCreator {
 
 	function createAll() {
 		$dbContents = file_get_contents('../duolex.sql');
-		echo $dbContents;
 		return ($this->con->multi_query($dbContents));
 	}
 

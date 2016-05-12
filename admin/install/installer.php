@@ -61,8 +61,7 @@ class Installer {
 				if ($this->installFormVarsSet() && $this->connect()) {
 					// Ready to create tables
 					$tc = new TableCreator($this->connector->getConnection());
-					$this->step = $tc->createAll();
-					echo $this->step;
+					$tablesOk = $tc->createAll();
 				} else {
 					// vars not yet set
 					// Don't go to step 2 yet.

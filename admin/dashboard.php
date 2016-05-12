@@ -2,9 +2,12 @@
 /* include('session.php'); */
 // TODO: move away from hardcoded DB
 $dbcon = new MySQLi("localhost","root","","duolex");
-
-
-$acc=$dbcon->query("SELECT firstname FROM duolex_users");
+require 'install/cfg.php';
+if(empty($c_database)) {
+	echo "No Database detected. Please run 'admin/install/install.php'";
+} else {
+		$acc=$dbcon->query("SELECT firstname FROM users");
+}
 
 ?>
 
@@ -48,16 +51,16 @@ along with Duolex.  If not, see <http://www.gnu.org/licenses/>.
 
 		<span class="title-bar-title">Duolex Dashboard</span>
 
-        <div class="account_dropdown">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li>
-              <a href="#"> <?php echo "$acc" ?> </a>
-              <ul class="menu">
-                <li><a href="#">Item 1A</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+		<div class="account_dropdown">
+			<ul class="dropdown menu" data-dropdown-menu>
+				<li>
+						<a href="#"> <?php /*echo "$acc" */?> </a>
+					<ul class="menu">
+						<li><a href="#">Item 1A</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 
 
 	    </div>
