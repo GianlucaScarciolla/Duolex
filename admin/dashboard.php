@@ -1,11 +1,10 @@
 <?php
-/* include('session.php'); */
-// TODO: move away from hardcoded DB
-$dbcon = new MySQLi("localhost","root","","duolex");
 require 'install/cfg.php';
+$dbcon = null;
 if(empty($c_database)) {
 	echo "No Database detected. Please run 'admin/install/install.php'";
 } else {
+		$dbcon = new MySQLi($c_server, $c_user, $c_password, $c_database);
 		$acc=$dbcon->query("SELECT firstname FROM users");
 }
 
