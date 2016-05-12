@@ -11,11 +11,9 @@ class TableCreator {
 	}
 
 	function createAll() {
-		return ($this->createUsers());
-	}
-
-	function createUsers() {
-		return $this->con->query(INSTALLQUERY_TABLE_USERS);
+		$dbContents = file_get_contents('../duolex.sql');
+		echo $dbContents;
+		return ($this->con->multi_query($dbContents));
 	}
 
 }
